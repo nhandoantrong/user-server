@@ -13,7 +13,7 @@ const checkExistedUserWithId = require('../../middleware/checkExistedUserWithId'
 const router = Router();
 
 router.get('/', getUsers);
-router.get('/:id', getUserById);
+router.get('/:id', checkExistedUserWithId, getUserById);
 router.post(
   '/',
   validateMiddleware.validateUserRegister,
